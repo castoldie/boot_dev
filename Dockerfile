@@ -1,3 +1,5 @@
 FROM debian:stable-slim
-COPY main.go /bin/main.go
-CMD ["/bin/main.go"]
+COPY boot_dev /bin/boot_dev
+ENV GOOS=linux
+ENV GOARCH=amd64
+CMD ["/bin/boot_dev"]

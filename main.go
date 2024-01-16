@@ -1,7 +1,5 @@
 package main
 
-Access-Control-Allow-Origin: *
-
 import (
 	"fmt"
 	"log"
@@ -15,7 +13,7 @@ func main() {
 
 	m.HandleFunc("/", handlePage)
 
-	const addr = ":8080"
+	addr := ":8080"
 	srv := http.Server{
 		Handler:      corsMux,
 		Addr:         addr,
@@ -37,7 +35,7 @@ func handlePage(w http.ResponseWriter, r *http.Request) {
 	const page = `<html>
 <head></head>
 <body>
-	<p> Hello from Docker! I'm a Go server. </p>
+	<p> Hi Docker, I pushed a new version! </p>
 </body>
 </html>
 `
